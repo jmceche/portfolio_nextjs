@@ -18,7 +18,7 @@ export default function Home() {
         />
       </Head>
 
-      <Box as='main' w='100vw' bg='#fafafa' pb='25vh' id='home'>
+      <Box as='main' bg='#fafafa' pb='25vh' id='home'>
         <Navbar />
         <Hero />
         <Box id='projects' pt='4rem'>

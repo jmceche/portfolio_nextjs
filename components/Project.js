@@ -13,6 +13,9 @@ const Project = ({ img, title, desc, techs, url }) => {
         p='0'
         m='0'
         h='100%'
+        filter='grayscale(80%)'
+        _hover={{ filter: "grayscale(0)", boxShadow: "2px 2px 3px lightgray" }}
+        bg='#FFFFFF'
       >
         <Flex>
           <Image

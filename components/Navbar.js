@@ -7,10 +7,6 @@ const Navbar = () => {
   const [show, setShow] = useState(true);
   const [copy, setCopy] = useState("Copy");
 
-  const handleMail = () => {
-    setShow(!show);
-  };
-
   const handleCopy = () => {
     copyMail();
     setCopy("Copied!");
@@ -25,15 +21,6 @@ const Navbar = () => {
     } catch (error) {
       console.log(error);
     }
-
-    /* let textArea = document.createElement("textarea");
-    textArea.value = "jmcechetto@gmail.com";
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea); */
   };
 
   return (
@@ -49,6 +36,7 @@ const Navbar = () => {
       position='fixed'
       top='0'
       left='0'
+      zIndex='10'
     >
       <Flex w='100%' justify={["center", "flex-start"]}>
         <Link ml={["1rem", "2rem"]} as={RouteLink} href='#home'>
@@ -68,13 +56,16 @@ const Navbar = () => {
           CV
         </Link>
       </Flex>
-      <Flex w='100%' justify={["center", "flex-end"]}>
-        <Box position='relative'>
-          <Button variant='unstyled' onClick={handleMail}>
-            <Icon as={FaRegEnvelope} w={8} h={8} mr='1rem'></Icon>
-          </Button>
+      <Flex w='100%' justify={["center", "flex-end"]} align='center'>
+        <Box
+          position='relative'
+          onMouseEnter={() => setShow(false)}
+          onMouseLeave={() => setShow(true)}
+        >
+          <Icon as={FaRegEnvelope} w={8} h={8} mr='1rem'></Icon>
           <Box
             position='absolute'
+            top='120%'
             right='-150%'
             m='auto'
             _after={{
