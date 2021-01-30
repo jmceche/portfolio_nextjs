@@ -3,10 +3,10 @@ import { FaRegEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import { Link as RouteLink } from "next";
 
-const Navbar = () => {
+const Navbar = ({ act }) => {
   const [show, setShow] = useState(true);
   const [copy, setCopy] = useState("Copy");
-
+  console.log(act);
   const handleCopy = () => {
     copyMail();
     setCopy("Copied!");
@@ -39,13 +39,28 @@ const Navbar = () => {
       zIndex='10'
     >
       <Flex w='100%' justify={["center", "flex-start"]}>
-        <Link ml={["1rem", "2rem"]} as={RouteLink} href='#home'>
+        <Link
+          ml={["1rem", "2rem"]}
+          style={{ fontWeight: act[0] ? "bold" : 400 }}
+          as={RouteLink}
+          href='#home'
+        >
           Home
         </Link>
-        <Link ml={["1rem", "2rem"]} as={RouteLink} href='#projects'>
+        <Link
+          ml={["1rem", "2rem"]}
+          as={RouteLink}
+          href='#projects'
+          style={{ fontWeight: act[1] ? "bold" : 400 }}
+        >
           Projects
         </Link>
-        <Link ml={["1rem", "2rem"]} as={RouteLink} href='#about'>
+        <Link
+          ml={["1rem", "2rem"]}
+          as={RouteLink}
+          href='#about'
+          style={{ fontWeight: act[2] ? "bold" : 400 }}
+        >
           About Me
         </Link>
         <Link
