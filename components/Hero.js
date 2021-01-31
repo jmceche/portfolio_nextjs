@@ -11,6 +11,7 @@ const Hero = () => {
       direction='column'
       justify='center'
       align='start'
+      mt='5rem'
     >
       <Box ml='10%'>
         <Heading
