@@ -7,12 +7,12 @@ const Hero = () => {
       h='60vh'
       bgImage='url("/pexels-negative-space-34088.jpg")'
       bgPosition='center'
-      /* bgSize='cover' */
+      bgSize='cover'
+      bgRepeat='no-repeat'
       direction='column'
       justify='center'
       align='start'
       mt='5rem'
-      style={{ backgroundSize: "cover" }}
     >
       <Box ml='10%'>
         <Heading
