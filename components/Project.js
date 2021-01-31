@@ -27,7 +27,12 @@ const Project = ({ img, title, desc, techs, url }) => {
           ></Image>
         </Flex>
         <Flex flexDir='column' justify='center' align='center'>
-          <Heading mt='.7rem' as='h4' fontSize='3xl' textAlign='center'>
+          <Heading
+            mt='.7rem'
+            as='h4'
+            fontSize={["2xl", "3xl"]}
+            textAlign='center'
+          >
             {title}
           </Heading>
           <Text w='70%' align='justify' as='p' mt='.5rem'>

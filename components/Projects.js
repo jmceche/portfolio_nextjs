@@ -10,8 +10,8 @@ const Projects = () => {
         as='h1'
         textAlign='center'
         fontWeight='regular'
-        fontSize='6xl'
-        m='2rem'
+        fontSize={["5xl", "6xl"]}
+        my='2rem'
       >
         Projects
       </Heading>

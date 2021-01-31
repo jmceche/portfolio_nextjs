@@ -15,7 +15,7 @@ const About = () => {
         as='h1'
         textAlign='center'
         fontWeight='regular'
-        fontSize='6xl'
+        fontSize={["5xl", "6xl"]}
         my='2rem'
       >
         About Me

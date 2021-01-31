@@ -15,7 +15,7 @@ const Hero = () => {
       <Box ml='10%'>
         <Heading
           as='h1'
-          fontSize='4rem'
+          fontSize={["3rem", "4rem"]}
           fontWeight='regular'
           color='white'
           textShadow='3px 3px 3px black'
