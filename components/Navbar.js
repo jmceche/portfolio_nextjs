@@ -6,7 +6,6 @@ import { Link as RouteLink } from "next";
 const Navbar = ({ act }) => {
   const [show, setShow] = useState(true);
   const [copy, setCopy] = useState("Copy");
-  console.log(act);
   const handleCopy = () => {
     copyMail();
     setCopy("Copied!");
