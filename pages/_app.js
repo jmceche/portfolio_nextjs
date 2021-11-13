@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }) {
@@ -7,8 +6,8 @@ function MyApp({ Component, pageProps }) {
       theme={extendTheme({
         fonts: {
           body: "Montserrat, sans-serif",
-          heading: "Montserrat, sans-serif",
-        },
+          heading: "Montserrat, sans-serif"
+        }
       })}
     >
       <Component {...pageProps} />
