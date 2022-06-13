@@ -19,7 +19,7 @@ const Navbar = ({ act }) => {
 
   const copyMail = async () => {
     try {
-      await navigator.clipboard.writeText("jmcechetto@gmail.com");
+      await navigator.clipboard.writeText(personalInfo.email);
     } catch (error) {
       console.log(error);
     }
