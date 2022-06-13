@@ -1,9 +1,9 @@
 import { Flex, Link, Icon, Button, Box, Text } from "@chakra-ui/react";
 import { FaRegEnvelope, FaGithub, FaLinkedin, FaBars } from "react-icons/fa";
 import { useState } from "react";
-import { Link as RouteLink } from "next";
 import SideBar from "./Sidebar";
 import NavLinks from "./NavLinks";
+import personalInfo from "../assets/personalInfo.json";
 
 const Navbar = ({ act }) => {
   const [show, setShow] = useState(true);
@@ -27,42 +27,42 @@ const Navbar = ({ act }) => {
 
   return (
     <Flex
-      w='100vw'
-      h='5rem'
-      bg='#f8f9fa'
-      as='nav'
-      direction='row'
-      align='center'
+      w="100vw"
+      h="5rem"
+      bg="#f8f9fa"
+      as="nav"
+      direction="row"
+      align="center"
       grow
-      position='fixed'
-      top='0'
-      left='0'
-      zIndex='10'
-      p='.6rem'
+      position="fixed"
+      top="0"
+      left="0"
+      zIndex="10"
+      p=".6rem"
     >
       <SideBar />
-      <Flex w='100%' direction='row' justify='space-between' align='center'>
+      <Flex w="100%" direction="row" justify="space-between" align="center">
         <Flex
-          w='100%'
-          align='center'
-          justify='flex-start'
-          direction='row'
+          w="100%"
+          align="center"
+          justify="flex-start"
+          direction="row"
           display={["none", "flex"]}
         >
-          <NavLinks ml='2rem' />
+          <NavLinks ml="2rem" />
         </Flex>
-        <Flex w='100%' direction='row' justify='flex-end'>
+        <Flex w="100%" direction="row" justify="flex-end">
           <Box
-            position='relative'
+            position="relative"
             onMouseEnter={() => setShow(false)}
             onMouseLeave={() => setShow(true)}
           >
-            <Icon as={FaRegEnvelope} w={8} h={8} mr='1rem'></Icon>
+            <Icon as={FaRegEnvelope} w={8} h={8} mr="1rem"></Icon>
             <Box
-              position='absolute'
-              top='120%'
-              right='-150%'
-              m='auto'
+              position="absolute"
+              top="120%"
+              right="-150%"
+              m="auto"
               _after={{
                 width: 0,
                 height: 0,
@@ -76,28 +76,22 @@ const Navbar = ({ act }) => {
                 left: "50%",
                 marginTop: "-10px",
               }}
-              bg='#333'
-              p='1rem'
+              bg="#333"
+              p="1rem"
               hidden={show}
             >
-              <Text color='#fff' fontWeight='bold' mb='.5rem'>
-                jmcechetto@gmail.com
+              <Text color="#fff" fontWeight="bold" mb=".5rem">
+                {personalInfo.email}
               </Text>
-              <Button onClick={handleCopy} isFullWidth p='.25rem' h='auto'>
+              <Button onClick={handleCopy} isFullWidth p=".25rem" h="auto">
                 {copy}
               </Button>
             </Box>
           </Box>
-          <Link href={"https://github.com/jmceche"} target='_blank' mr='1rem'>
+          <Link href={personalInfo.github} target="_blank" mr="1rem">
             <Icon as={FaGithub} w={8} h={8}></Icon>
           </Link>
-          <Link
-            href={
-              "https://www.linkedin.com/in/juan-mart%C3%ADn-cechetto-395202102/"
-            }
-            target='_blank'
-            mr='1rem'
-          >
+          <Link href={personalInfo.linkedin} target="_blank" mr="1rem">
             <Icon as={FaLinkedin} w={8} h={8}></Icon>
           </Link>
         </Flex>
